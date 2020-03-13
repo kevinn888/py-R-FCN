@@ -144,7 +144,7 @@ ext_modules = [
         sources=['pycocotools/maskApi.c', 'pycocotools/_mask.pyx'],
         include_dirs = [numpy_include, 'pycocotools'],
         extra_compile_args={
-            'gcc': ['-Wno-cpp', '-Wno-unused-function', '-std=c99']},
+            'gcc': ['-Wno-cpp', '-Wno-unused-function', '-Wmisleading-indentation', '-std=c99']},
     ),
 ]
 
