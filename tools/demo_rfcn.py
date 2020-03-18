@@ -132,12 +132,12 @@ if __name__ == '__main__':
         caffe.set_device(args.gpu_id)
         cfg.GPU_ID = args.gpu_id
     net = caffe.Net(prototxt, caffemodel, caffe.TEST)
-    print(net.param['conv1'])
+    print(net.params['conv1'][0].data)
     print('\n\nLoaded network {:s}'.format(caffemodel))
 
     # Warmup on a dummy image
     im = 128 * np.ones((300, 500, 3), dtype=np.uint8)
-    for i in xrange(2):
+    for i in range(2):
         _, _= im_detect(net, im)
 
     im_names = ['000456.jpg', '000542.jpg', '001150.jpg',
